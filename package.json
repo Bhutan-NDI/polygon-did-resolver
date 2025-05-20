@@ -6,6 +6,7 @@
   "main": "build/index.js",
   "author": "Ajay Jadhav <ajay@ayanworks.com>",
   "contributors": [
+    "Kinzang Dorji <kinzangdorji@dhi.bt>",
     "Anusha Garg <anusha.garg@ayanworks.com>, Shashank Kulkarni <shashank.kulkarni@ayanworks.com>"
   ],
   "files": [
@@ -13,15 +14,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/polygon-did/polygon-did-resolver.git"
+    "url": "git+https://github.com/Bhutan-NDI/polygon-did-resolver.git"
   },
   "keywords": [
     "did-method"
   ],
   "bugs": {
-    "url": "https://gitlab.com/polygon-did/polygon-did-resolver/issues"
+    "url": "https://github.com/Bhutan-NDI/polygon-did-resolver/issues"
   },
-  "homepage": "https://gitlab.com/polygon-did/polygon-did-resolver#readme",
+  "homepage": "https://github.com/Bhutan-NDI/polygon-did-resolver/blob/main/README.md",
   "scripts": {
     "clean": "rm -rf build",
     "clean:deps": "pnpm clean && rm -rf node_modules",
