@@ -1,6 +1,6 @@
 {
   "name": "@bhutan-ndi/polygon-did-resolver",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "description": "The polygon resolver library is used for resolving DID’s in Polygon Method Space. The module is supposed to be used as an integeration to polygon library. This release is for testing Ethereum integration",
   "license": "MIT",
   "main": "build/index.js",
