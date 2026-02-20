@@ -3,12 +3,19 @@ import { DIDResolutionResult, DIDResolver } from 'did-resolver'
 import DidRegistryContract from '@ayanworks/polygon-did-registry-contract'
 import { parseDid, validateDid } from './utils/did'
 
+export interface PolygonResolverOptions {
+  provider?: providers.Provider
+  contractAddress?: string
+}
+
 /**
  * Resolves DID Document.
  * @param did
  * @returns Return DID Document on chain.
  */
-export function getResolver(): Record<string, DIDResolver> {
+export function getResolver(
+  options?: PolygonResolverOptions,
+): Record<string, DIDResolver> {
   async function resolve(did: string): Promise<DIDResolutionResult> {
     try {
       const isValidDid = validateDid(did)
@@ -17,9 +24,14 @@ export function getResolver(): Record<string, DIDResolver> {
       }
 
       const parsedDid = parseDid(did)
-      const provider = new providers.JsonRpcProvider(parsedDid.networkUrl)
+
+      const contractAddress =
+        options?.contractAddress ?? parsedDid.contractAddress
+
+      const provider =
+        options?.provider ?? new providers.JsonRpcProvider(parsedDid.networkUrl)
       const registry = new Contract(
-        parsedDid.contractAddress,
+        contractAddress,
         DidRegistryContract.abi,
         provider,
       )
